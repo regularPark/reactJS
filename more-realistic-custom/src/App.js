@@ -23,7 +23,7 @@ function App() {
     sendRequest: fetchTasks,
   } = useHttp(
     {
-      url: "https://realistic-custom-hooks-default-rtdb.firebaseio.com/task.json",
+      url: "https://realistic-custom-hooks-default-rtdb.firebaseio.com/tasks.json",
     },
     transformTasks
   );
