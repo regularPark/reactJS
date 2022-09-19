@@ -91,8 +91,8 @@ const BasicForm = (props) => {
       <div className={emailClasses}>
         <label htmlFor="name">E-Mail Address</label>
         <input
-          type="text"
-          id="name"
+          type="email"
+          id="email"
           value={emailValue}
           onChange={emailChangeHandler}
           onBlur={emailBlurHandler}
