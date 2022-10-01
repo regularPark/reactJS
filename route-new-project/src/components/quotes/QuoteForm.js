@@ -31,6 +31,8 @@ const QuoteForm = (props) => {
     setIsEntering(false);
   };
 
+  // v6에서 Prompt는 존재하지 않음.
+  // 없애고싶지않다면 v5를 유지할 것.
   return (
     <Fragment>
       <Prompt
