@@ -60,8 +60,11 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
+        const expirationTime = new Date(
+          new Date().getTime() + +data.expiresIn * 1000
+        );
         // 사용자가 로그인해서 인증한 순간. 토큰이 생김.
-        authCtx.login(data.idToken);
+        authCtx.login(data.idToken, expirationTime.toISOString());
         history.replace("/"); // redirection
       })
       .catch((err) => {
