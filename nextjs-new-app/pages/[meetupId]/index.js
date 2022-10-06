@@ -34,7 +34,12 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false, // 특정 페이지를 pre-generate하지 않는다라는 뜻.
+    fallback: "blocking",
+    // 특정 페이지를 pre-generate하지 않는다라는 뜻.
+    //*** 배포 후 fallback 떄문에 404 오류 발생 ***
+    // false에서 => 'blocking'으로 변경 후 재배포
+    // true나 blocking으로 설정하면 404는 반환하지 않음
+    // true는 빈페이지, blocking은 동적 생성된 것 풀다운
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
