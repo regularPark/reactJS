@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Card from "../UI/Card";
 import "./IngredientForm.css";
+import LoadingIndicator from "./../UI/LoadingIndicator";
 
 /** useState는 다른 함수에 내부에서 선언될 수 없다.
  * 컴포넌트의 루트에서 사용되어야 함.
@@ -45,6 +46,7 @@ const IngredientForm = React.memo((props) => {
           </div>
           <div className="ingredient-form__actions">
             <button type="submit">Add Ingredient</button>
+            {props.loading && <LoadingIndicator />}
           </div>
         </form>
       </Card>
